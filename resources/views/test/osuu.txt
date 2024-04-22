@@ -1,0 +1,87 @@
+ {{-- <label for="price_from">Price From:</label>
+                    <input type="number" name="price_from" id="price_from">
+
+                    <label for="price_to">Price To:</label>
+                    <input type="number" name="price_to" id="price_to"> --}}
+
+                    {{-- <label for="engine">Engine:</label>
+                    <select name="engine" id="engine">
+                        <option value="All Engines">All Engines</option>
+                        <option value="V6">V6</option>
+                        <option value="I4">I4</option>
+                        <option value="Electric">Electric</option>
+                    </select>
+
+                    <label for="transmission">Transmission:</label>
+                    <select name="transmission" id="transmission">
+                        <option value="All Transmission">All Transmissions</option>
+                        <option value="Automatic">Automatic</option>
+                        <option value="Manual">Manual</option>
+                    </select> --}}
+
+
+
+
+
+    // Apply filters based on request parameters:
+    $brand = $request->get('brand');
+    $priceFrom = $request->get('price_from');
+    $priceTo = $request->get('price_to');
+    $bodyType = $request->get('body_type');
+    $engine = $request->get('engine');
+    $transmission = $request->get('transmission');
+
+
+
+
+
+    // Filter by brand (if provided):
+    if ($brand && $brand !== "All Products") {
+        $query->where('brand', $brand);
+    }
+
+    // // Filter by price range (if both priceFrom and priceTo are provided):
+    // if ($priceFrom && $priceTo) {
+    //     $query->whereBetween('price', [$priceFrom, $priceTo]);
+    // } else if ($priceFrom) {
+    //     // Filter by price from (if only priceFrom is provided, minimum price):
+    //     $query->where('price', '>=', $priceFrom);
+    // } else if ($priceTo) {
+    //     // Filter by price to (if only priceTo is provided, maximum price):
+    //     $query->where('price', '<=', $priceTo);
+    // }
+
+    // // Filter by body type (if provided):
+    // if ($bodyType) {
+    //     $query->where('body_type', $bodyType);
+    // }
+
+    // // Filter by engine (if provided):
+    // if ($engine) {
+    //     $query->where('engine', $engine);
+    // }
+
+    // // Filter by transmission (if provided):
+    // if ($transmission) {
+    //     $query->where('transmission', $transmission);
+    // }
+
+
+
+
+
+
+
+
+
+
+if ($priceRange && $priceRange !== "") {
+    //     $prices = explode('-', $priceRange); // Split price range
+
+    //     if (count($prices) === 2) {
+    //         $minPrice = $prices[0];
+    //         $maxPrice = $prices[1];
+
+    //         $query->whereBetween('price', [$minPrice, $maxPrice]);
+    //     }
+    // }
